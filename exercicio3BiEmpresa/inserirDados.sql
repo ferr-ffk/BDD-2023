@@ -54,6 +54,33 @@ values
     (29, 'José Lima', '87654321098', '87654321098', 2400.00),
     (30, 'Fernanda Santos', '76543210987', '76543210987', 3200.00);
 
+
+-- da erro
+insert into empregado
+values (31, 'Luís Felipe', '43367728902', '973044370', 1, 1);
+
 select * from empregado;
 
+
 -- 17 dependentes
+
+insert into dependente (idDependente, Nome_dependente, fk_Empregado_Matricula, Dt_nascimento)
+values
+    (2, 'Davi Gomes', 1, '1919-01-01 06:06:06'),
+    (3, 'Manoel Gomes', 2, '2004-03-03 02:02:02'),
+    (4, 'João Gomes', 1, '1909-09-08 08:08:08'),
+    (5, 'Gilberto Gil', 2, '1989-03-04 08:08:08'),
+    (6, 'Hugo Andre', 3, '1998-09-08 08:08:08'),
+    (7, 'Bernardo', 1, '1909-09-08 08:08:08'),
+    (8, 'Natalia', 2, '1909-09-08 08:08:08'),
+    (9, 'Melissa Federal', 2, '1909-09-08 08:08:08'),
+    (10, 'Gabriel Gomes', 2, '1129-09-08 08:10:08'),
+    (11, 'Eduardo', 1, '1945-09-08 08:08:08'),
+    (12, 'Sandra', 2, '1909-09-08 08:08:08'),
+    (13, 'Leo', 2, '1909-09-08 08:08:08'),
+    (14, 'Oliveira', 1, '1909-09-08 08:08:08'),
+    (15, 'rs', 1, '1000-09-08 08:08:08'),
+    (16, 'Carlos', 1, '1967-10-10 08:08:08'),
+    (17, 'Pereira Daniel Estevão', 2, '1969-02-08 08:08:08');
+    
+select * from dependente;
