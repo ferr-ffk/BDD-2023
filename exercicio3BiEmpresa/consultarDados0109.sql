@@ -158,9 +158,47 @@ GROUP BY O.Nome_orgao, C.Nome_cargo;
 select sexo Sexo, avg(Salario) 'Média dos salários por sexo' from empregado group by sexo;
 
 -- MÉDIA DOS SALÁRIOS POR ANO DE NASCIMENTO
-select year(dt_nascimento) ano_nascimento, avg(Salario)
-from empregado
-group by ano_nascimento;
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2005-08-09' WHERE (`Matricula` = '1');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2015-04-04' WHERE (`Matricula` = '2');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2005-12-29' WHERE (`Matricula` = '3');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2015-04-04' WHERE (`Matricula` = '4');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2005-08-09' WHERE (`Matricula` = '5');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2155-04-04' WHERE (`Matricula` = '6');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1952-12-29' WHERE (`Matricula` = '7');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1989-12-04' WHERE (`Matricula` = '8');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1954-08-09' WHERE (`Matricula` = '9');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1999-04-04' WHERE (`Matricula` = '10');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1999-12-29' WHERE (`Matricula` = '11');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2004-12-04' WHERE (`Matricula` = '12');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2003-08-09' WHERE (`Matricula` = '13');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2002-04-04' WHERE (`Matricula` = '14');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2001-12-29' WHERE (`Matricula` = '15');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2000-08-04' WHERE (`Matricula` = '16');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1995-08-09' WHERE (`Matricula` = '17');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1996-04-04' WHERE (`Matricula` = '18');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1997-12-29' WHERE (`Matricula` = '19');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1997-12-04' WHERE (`Matricula` = '20');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1997-08-09' WHERE (`Matricula` = '21');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2004-04-04' WHERE (`Matricula` = '22');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2003-12-29' WHERE (`Matricula` = '23');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2002-12-04' WHERE (`Matricula` = '24');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1994-08-09' WHERE (`Matricula` = '25');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1956-04-04' WHERE (`Matricula` = '26');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1999-12-29' WHERE (`Matricula` = '27');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '1999-01-04' WHERE (`Matricula` = '28');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2000-08-09' WHERE (`Matricula` = '29');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2004-04-04' WHERE (`Matricula` = '30');
+UPDATE `exercicio_nando`.`Empregado` SET `dataNasc` = '2005-12-29' WHERE (`Matricula` = '31');
+
+alter table Empregado
+add column dataNasc date;
+
+select * from Empregado;
+
+select avg(Salario), year(dataNasc)
+from Empregado
+group by 2
+order by 2;
 
 -- CONTAGEM DE QUANTOS DEPENDENTES CADA EMPREGADO TEM
 select e.nome, count(d.idDependente) 'Quantidade de dependentes'
